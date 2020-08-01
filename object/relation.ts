@@ -6,16 +6,22 @@ namespace E {
             this.voice = "";
         }
 
-        Say() {
+        public Say() {
             console.log(this.voice);
         }
     }
 
     class Dog extends Animal {
-        public voice: string;
         constructor() {
             super();
             this.voice = "Bowwow";
+        }
+    }
+
+    class Cat extends Animal {
+        constructor() {
+            super();
+            this.voice = "Meow";
         }
     }
 
@@ -28,7 +34,7 @@ namespace E {
             this.keep = null;
         }
 
-        Say() {
+        public Say() {
             console.log(this.voice);
             if (this.keep) {
                 this.keep.Say();
@@ -37,10 +43,14 @@ namespace E {
     }
 
     const pochi = new Dog();
-
+    const tama = new Cat();
     const yamada = new Human();
 
     yamada.keep = pochi;
+
+    yamada.Say();
+
+    yamada.keep = tama;
 
     yamada.Say();
 

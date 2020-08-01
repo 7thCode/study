@@ -18,7 +18,6 @@ namespace D {
     }
 
     class Dog extends Animal {
-        public voice: string;
         constructor() {
             super();
             this.voice = "Bowwow";
@@ -26,7 +25,6 @@ namespace D {
     }
 
     class Cat extends Animal {
-        public voice: string;
         constructor() {
             super();
             this.voice = "Meow";
@@ -34,7 +32,6 @@ namespace D {
     }
 
     class Human extends Animal {
-        public voice: string;
         constructor() {
             super();
             this.legs = 2;
