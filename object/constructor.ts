@@ -3,15 +3,15 @@ namespace A {
 
         type: string; // プロパティ
     
-        constructor() { // コンストラクタ
-            this.type = "Dog";
+        constructor(type: string) { // コンストラクタ
+            this.type = type;
         }
     
-        intro() {　　// メソッド
+        say() {　　// メソッド
             console.log(this.type);
         }
     }
     
-    const myPet = new Animal();　// インスタンス作成
-    myPet.intro();
+    const myPet = new Animal("Snake");　// インスタンス作成
+    myPet.say();
 }

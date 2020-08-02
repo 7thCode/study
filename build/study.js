@@ -1,20 +1,18 @@
 "use strict";
-var Animal = /** @class */ (function () {
-    function Animal() {
-        this.voice = "";
+var isPrime = function (x) {
+    var max = Math.floor(Math.sqrt(x));
+    var result = true;
+    for (var y = 2; y <= max; y++) {
+        if ((x % y) === 0) {
+            result = false;
+            break;
+        }
     }
-    Animal.prototype.bark = function () {
-        console.log(this.voice);
-    };
-    Animal.prototype.fight = function (target) {
-        console.log(target.voice);
-        console.log(this.voice);
-    };
-    return Animal;
-}());
-var pochi = new Animal();
-var tama = new Animal();
-pochi.voice = "Bow";
-tama.voice = "Maow";
-tama.fight(pochi);
+    return result;
+};
+for (var X = 3; X < 1000; X += 2) {
+    if (isPrime(X)) {
+        console.info(X);
+    }
+}
 //# sourceMappingURL=study.js.map

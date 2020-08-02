@@ -31,6 +31,13 @@ namespace D {
         }
     }
 
+    class Fox extends Animal {
+        constructor() {
+            super();
+            this.voice = "Kon";
+        }
+    }
+
     class Human extends Animal {
         constructor() {
             super();
@@ -40,12 +47,16 @@ namespace D {
         }
     }
 
-    const pochi = new Dog();
-    pochi.Say();
+  //  const pochi = new Dog();
+  //  pochi.Say();
+  //  console.log(pochi.legs);
 
-    const tama = new Cat();
-    tama.Say();
+ //   const gon = new Fox();
+ //   gon.Say();
+ //   console.log(gon.legs);
 
     const yamada = new Human();
     yamada.Say();
+    console.log(yamada.legs);
+
 }

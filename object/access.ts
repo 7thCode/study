@@ -1,13 +1,14 @@
 namespace C {
+
     class Parson {
 
-        private secret: string = "" ;　// Class自身からしか見えないプロパティ
+       secret: string = "" ;　// Class自身からしか見えないプロパティ
       
-        tell(): string {
+        public tell(): string {
           return this.secret;
         }
       
-        save(treasure: string) {
+        public save(treasure: string) {
           this.secret = treasure;
         }
       }
@@ -16,7 +17,7 @@ namespace C {
     
       me.save("***SECRET****");
       
-      // console.log(me.secret);
+    // console.log(me.secret);
       
       console.log(me.tell());
 }

@@ -1,13 +1,23 @@
 namespace B {
+    
     class Animal {
 
         type: string = ""; // プロパティ
     
         say() {　　// メソッド
-            console.log("bowwow");
+            console.log(this.type);
         }
     }
     
-    const myPet = new Animal();　// インスタンス作成
-    myPet.say();
+    const pochi = new Animal();　// インスタンス作成
+    pochi.type = "Dog";     
+    pochi.say();
+
+    const tama = new Animal();　// インスタンス作成
+    tama.type = "Cat";
+    tama.say();
+
+
+
+
 }
