@@ -10,3 +10,6 @@ prime.dSYM/Contents/Resources/DWARF/prime
 app.js
 routes/index.js
 routes/users.js
+build/routes/index.js
+build/routes/users.js
+package-lock.json
