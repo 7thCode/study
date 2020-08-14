@@ -28,6 +28,19 @@
 				"<node_internals>/**"
             ],
             "outputCapture": "std"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Rust Debug",
+            "sourceLanguages": [
+                "rust"
+            ],
+            "terminal": "integrated",
+            "preLaunchTask": "Build single Rust file",
+            "program": "${workspaceRoot}/${fileBasenameNoExtension}",
+            "args": [],
+            "cwd": "${workspaceFolder}"
         }
     ]
 }

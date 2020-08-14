@@ -17,7 +17,4 @@ namespace B {
     tama.type = "Cat";
     tama.say();
 
-
-
-
 }

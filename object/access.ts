@@ -1,5 +1,12 @@
 namespace C {
 
+
+  const hoge = (a: Parson | null) : void => {
+ 
+    a?.tell();
+
+  }
+
     class Parson {
 
        secret: string = "" ;　// Class自身からしか見えないプロパティ
@@ -13,11 +20,18 @@ namespace C {
         }
       }
       
-      const me = new Parson();
+      const me: Parson = new Parson();
+
+      hoge(me);
+
     
       me.save("***SECRET****");
       
     // console.log(me.secret);
       
       console.log(me.tell());
+
+
+
+
 }

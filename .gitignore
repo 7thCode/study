@@ -1,0 +1,12 @@
+build/class.js
+build/object/Inheritance.js
+build/object/access.js
+build/object/class.js
+build/object/constructor.js
+build/object/relation.js
+prime
+prime.dSYM/Contents/Info.plist
+prime.dSYM/Contents/Resources/DWARF/prime
+app.js
+routes/index.js
+routes/users.js
