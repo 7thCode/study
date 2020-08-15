@@ -31,7 +31,4 @@ namespace C {
       
       console.log(me.tell());
 
-
-
-
 }
