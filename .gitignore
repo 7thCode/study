@@ -13,3 +13,7 @@ routes/users.js
 build/routes/index.js
 build/routes/users.js
 package-lock.json
+build/object/akiyama.js
+build/object/asano.js
+build/object/oda.js
+build/object/takagi.js
