@@ -9,14 +9,12 @@ gulp.task('compile', function () {
 		'routes/**/*.ts',
 	], {base: './'})
 		.pipe(sourcemaps.init())
-		.pipe(typescript({target: "ES5", removeComments: true}))
+		.pipe(typescript({target: "ES6", removeComments: true}))
 		.js
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest('./'));
 
 });
-
-
 
 gulp.task('default', gulp.series('compile'), function () {
 
