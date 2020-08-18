@@ -1,5 +1,6 @@
 "use strict";
 // クラスの基本
+var a = 1;
 /*
 interface IProfile {
     name: string;
