@@ -4,7 +4,6 @@
 const a = 2;
 
 
-
 /*
 interface IProfile {
     name: string;
