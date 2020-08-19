@@ -28,6 +28,43 @@
 				"<node_internals>/**"
             ],
             "outputCapture": "std"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'study'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=study",
+                    "--package=study"
+                ],
+                "filter": {
+                    "name": "study",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'study'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=study",
+                    "--package=study"
+                ],
+                "filter": {
+                    "name": "study",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
         }
     ]
 }
