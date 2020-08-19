@@ -1,12 +1,17 @@
-"use strict";
 // クラスの基本
-var a = 1;
+
+
+const a = 2;
+
+
+
 /*
 interface IProfile {
     name: string;
     age: number;
 }
 */
+
 /*
 
 interface IName {
@@ -43,5 +48,4 @@ class Oda implements IProfile  {
     }
 }
 
-*/ 
-//# sourceMappingURL=oda.js.map
+*/
