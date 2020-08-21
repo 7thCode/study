@@ -1,20 +1,6 @@
 {
     "version": "0.2.0",
     "configurations": [
-        
-        {
-            "type": "cppdbg",
-            "request": "launch",
-            "name": "Launch C++",
-            "preLaunchTask": "clang++ build active file",
-            "cwd": "${workspaceFolder}",
-            "program": "${fileDirname}/${fileBasenameNoExtension}",
-            "args": [],
-            "stopAtEntry": false,
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "lldb",
-        },
         {
             "type": "node",
             "request": "launch",
@@ -30,6 +16,20 @@
             ],
             "outputCapture": "std"
         },
+        {
+            "type": "cppdbg",
+            "request": "launch",
+            "name": "Launch C++",
+            "preLaunchTask": "clang++ build active file",
+            "cwd": "${workspaceFolder}",
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+        },
+
         {
             "type": "lldb",
             "request": "launch",
