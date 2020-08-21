@@ -1,50 +1,140 @@
+namespace Oda {
+
 // クラスの基本
 
+/*
 
-const a = 2;
+class Person {
+    name: string = "";
+    age: number = 0;
+}
+
+const yamada = new Person();
+yamada.name = "yamada";
+yamada.age = 20;
+
+console.log(yamada.age);
+
+const tanaka = new Person();
+tanaka.name = "tanaka";
+
+console.log(tanaka.age);
+
+*/
 
 
 /*
-interface IProfile {
+
+class Person {
+
     name: string;
     age: number;
+
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+    }
 }
+
+const yamada = new Person("yamada", 20);
+
+const tanaka = new Person("tanaka", 30);
+
 */
 
 /*
 
-interface IName {
-    first: string;
-    middle: string;
-    last: string;
-}
-
-interface ICompany {
-    type: string;
+interface IPerson {
     name: string;
-}
-
-interface IProfession {
-    type: string;
-    company: ICompany;
-}
-
-interface IProfile {
-    name: IName;
     age: number;
-    profession: IProfession;
 }
 
-class Oda implements IProfile  {
-    name: IName;
-    age: number;
-    profession: IProfession;
+interface IStudent {
+    classroom: string;
+}
 
-    constructor() {
-        this.name = {first: "", middle:"", last: ""};
-        this.age = 20;
-        this.profession = {type: "" , company: {type: "", name: ""}}
+interface IOfficeWorker {
+    company: string;
+}
+
+class Student implements IPerson ,IStudent {
+    name: string;
+    age: number;
+    classroom: string;
+
+    constructor(name: string, age: number, classroom: string) {
+        this.name = name;
+        this.age = age;
+        this.classroom = classroom;
+    }
+}
+
+class OfficeWorker implements IPerson , IOfficeWorker {
+    name: string;
+    age: number;
+    company: string;
+
+    constructor(name: string, age: number, company: string) {
+        this.name = name;
+        this.age = age;
+        this.company = company;
     }
 }
 
 */
+
+/*
+
+class Name  {
+    first: string;
+    middle: string;
+    last: string;
+
+    constructor(first: string, middle: string, last: string) {
+        this.first = first;
+        this.middle = middle;
+        this.last = last;
+    }
+}
+
+class Company  {
+    type: string;
+    name: string;
+
+    constructor(type: string, name: string) {
+        this.type = type;
+        this.name = name;
+    }
+}
+
+class Profession  {
+    type: string;
+    company: Company;
+
+    constructor(type: string, company: Company) {
+        this.type = type;
+        this.company = company;
+    }
+}
+
+class Person {
+    name: Name;
+    age: number;
+    profession: Profession;
+
+    constructor(name: Name, age: number, profession: Profession) {
+        this.name = name;
+        this.age = age;
+        this.profession = profession;
+    }
+}
+
+const name: Name = new Name("yamada", "", "hajime");
+const company: Company = new Company("us", "Apple");
+const profession: Profession = new Profession("officer", company);
+
+const yamada = new Person(name, 30, profession);
+
+*/
+
+}
