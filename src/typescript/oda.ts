@@ -75,7 +75,7 @@ interface Hobbyist {
     category: string;
 }
 
-class Oda extends OfficeWoker implements Father, Hobbyist {
+class Oda extends OfficeWoker implements  Hobbyist {
     children: Person[] = [];
     category: string = "Movie";
 }
