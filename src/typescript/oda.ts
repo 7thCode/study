@@ -1,57 +1,91 @@
 namespace Oda {
 
 class LivingThing {
-    bless_count: number;
-    moved: boolean;
+     bless_count: number;
+     moved: boolean;
     X: number;
     Y: number;
 
-    constructor(bless: number) {
+    constructor() {
         this.X = 0;
         this.Y = 0;
-        this.bless_count = bless;
+        this.bless_count = 60;
         this.moved = true;
     }
 
-    walk() {
-     this.X++;
+    walkToNorth() {
+        this.Y--;
+    }
+
+    walkToSouth() {
+        this.Y++;
+    }
+
+    walkToEast() {
+        this.X++;
+    }
+
+    walkToWest() {
+        this.X--;
     } 
 }
 
 class Human extends LivingThing {
     think: boolean;
-
     constructor() {
-        super(60);
+        super();
         this.think = true;
     }
 }
 
 class Person extends Human {
     name : string;
+    private secret:string;
+    wife: Person;
+    children:  Person[];
 
     constructor() {
         super();
+        this.secret = "******SECRET******";
         this.name = "";
+        this.wife = new Person();
+        this.children = [];
+        this.children.push(new Person());
     }
 }
 
 class OfficeWoker extends Person {
     company: string;
-
+   
     constructor(company: string) {
         super();
+        this.name = "";
         this.company = company;
+    
     }
+
+    public isCoworker(person: OfficeWoker): boolean {
+       return (this.company === person.company);
+    } 
 }
 
-const oda = new OfficeWoker("ABC");
 
-if (oda.moved) {
-   console.info(oda.X);
-   oda.walk();
-   console.info(oda.X);
+
+interface Hobbyist {
+    category: string;
 }
+
+class Oda extends OfficeWoker implements Father, Hobbyist {
+    children: Person[] = [];
+    category: string = "Movie";
+}
+
+const x: Oda = new Oda("ABC");
+
+const y: OfficeWoker = new OfficeWoker("XYZ");
+
+const cowarker: boolean = x.isCoworker(y);
+
 
 
 

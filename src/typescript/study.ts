@@ -1,5 +1,7 @@
 "use strict";
 
+
+
 const isPrime = (x: number): boolean => {
 	let max: number = Math.floor(Math.sqrt(x));
 	let result: boolean = true;
