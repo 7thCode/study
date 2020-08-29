@@ -68,29 +68,31 @@ namespace Akiyama {
 
     const cowoker: boolean = x.isCoworker(y);
 
-    class CatLover extends Human {
-        Motivation: number;
-        WatchedCatVideos: boolean;
-
+    class CatLover extends Person {
+        private Motivation: number;
+        private WatchedCatVideos: boolean;
 
         constructor(WatchedCatVideos: boolean){
             super();
             this.Motivation = 0;
-            this.WatchedCatVideos = false;
+            this.WatchedCatVideos = WatchedCatVideos;
         }
 
-        watchCatVideos() {
-            this.Motivation++;
+        public getMotivation(): number {
+            return this.Motivation;
+        }
+
+        public watchCatVideos(): void {
+            if (this.WatchedCatVideos) {
+                this.Motivation++;
+           }
         }     
 
     }
 
     const akiyama_private: CatLover = new CatLover(true);
-    console.info ("私のライフは" + akiyama_private.Motivation + "です。");
-
-    if (akiyama_private.WatchedCatVideos) {
-         akiyama_private.watchCatVideos();
-    }
-    console.info ("私のライフは" + akiyama_private.Motivation + "です。");
+    console.info ("私のライフは" + akiyama_private.getMotivation() + "です。");
+    akiyama_private.watchCatVideos();
+    console.info ("私のライフは" + akiyama_private.getMotivation() + "です。");
 
 }
