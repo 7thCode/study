@@ -41,15 +41,19 @@ class Human extends LivingThing {
 class Person extends Human {
     name : string;
     private secret:string;
-    wife: Person;
+    wife: Person | null;
     children:  Person[];
 
     constructor() {
         super();
         this.secret = "******SECRET******";
         this.name = "";
-        this.wife = new Person();
+        this.wife = null;
         this.children = [];
+    }
+
+    family() {
+        this.wife = new Person();
         this.children.push(new Person());
     }
 }
@@ -86,8 +90,8 @@ const y: OfficeWoker = new OfficeWoker("XYZ");
 
 const cowarker: boolean = x.isCoworker(y);
 
-
-
+const takagi = new Takagi.Hobbyist("Takagi", ["Futsal", "Jogging"]);
+takagi.IntroduceHobby();
 
 
 // クラスの基本
