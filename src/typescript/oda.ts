@@ -41,54 +41,49 @@ class Human extends LivingThing {
 class Person extends Human {
     name : string;
     private secret:string;
-    wife: Person | null;
-    children:  Person[];
-
-    constructor() {
+    constructor(name: string) {
         super();
         this.secret = "******SECRET******";
-        this.name = "";
-        this.wife = null;
+        this.name = name;
+    }
+}
+
+class Parent extends Person {
+    partner:Parent | null;
+    children: Person[];
+   
+    constructor(name: string) {
+        super(name);
+        this.partner = null;
         this.children = [];
     }
 
-    family() {
-        this.wife = new Person();
-        this.children.push(new Person());
+    marriage(partner:Parent) {
+        this.partner = partner;
+        partner.partner = this;
     }
-}
 
-class OfficeWoker extends Person {
-    company: string;
+    addChild(name: string) {
+        if(this.partner) {
+            const child = new Person(name)
+            this.children.push(child);
+            this.partner.children.push(child);
+        }
+    }
+
+    childCount() {
+        return this.children.length;
+    }
    
-    constructor(company: string) {
-        super();
-        this.name = "";
-        this.company = company;
-    
-    }
-
-    public isCoworker(person: OfficeWoker): boolean {
-       return (this.company === person.company);
-    } 
 }
 
+const sato: Parent = new Parent("sato");
+const tanaka: Parent = new Parent("tanaka");
+tanaka.marriage(sato);
+sato.addChild("musuko");
+console.log(tanaka.childCount());
+console.log(sato.children[0].name);
 
-
-interface Hobbyist {
-    category: string;
-}
-
-class Oda extends OfficeWoker implements  Hobbyist {
-    children: Person[] = [];
-    category: string = "Movie";
-}
-
-const x: Oda = new Oda("ABC");
-
-const y: OfficeWoker = new OfficeWoker("XYZ");
-
-const cowarker: boolean = x.isCoworker(y);
 
 // const takagi = new Takagi.Hobbyist("Takagi", ["Futsal", "Jogging"]);
 // takagi.IntroduceHobby();

@@ -5,3 +5,7 @@ source/cpp/prime
 source/cpp/prime.dSYM/Contents/Info.plist
 Cargo.lock
 
+public/favicon.ico
+public/index.html
+public/stylesheets/style.css
+public/stylesheets/style.css
