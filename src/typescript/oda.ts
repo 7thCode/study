@@ -90,8 +90,8 @@ const y: OfficeWoker = new OfficeWoker("XYZ");
 
 const cowarker: boolean = x.isCoworker(y);
 
-const takagi = new Takagi.Hobbyist("Takagi", ["Futsal", "Jogging"]);
-takagi.IntroduceHobby();
+// const takagi = new Takagi.Hobbyist("Takagi", ["Futsal", "Jogging"]);
+// takagi.IntroduceHobby();
 
 
 // クラスの基本
