@@ -28,10 +28,11 @@ namespace Akiyama {
     }
     
     class Person extends Human {
-        name : string;
-    
+        protected name: string;
+        private secret: string; 
         constructor() {
             super();
+            this.secret = "XXXXXXXX";
             this.name = "";
         }
     }
@@ -41,16 +42,55 @@ namespace Akiyama {
     
         constructor(company: string) {
             super();
+            this.name = "";
             this.company = company;
+        }
+
+        public isCoworker(person: OfficeWoker): boolean {
+            return (this.company === person.company);
         }
     }
     
-    const akiyama = new OfficeWoker("ABC");
+    const akiyama: OfficeWoker = new OfficeWoker("ABC");
     
     if (akiyama.moved) {
        console.info(akiyama.X);
        akiyama.walk();
        console.info(akiyama.X);
     }
+
+    interface Hobbyist {
+        category: string;
+    }
+
+    const x: OfficeWoker = new OfficeWoker("ABC");
+    const y: OfficeWoker = new OfficeWoker("XYZ");
+
+    const cowoker: boolean = x.isCoworker(y);
+
+    class CatLover extends Human {
+        Motivation: number;
+        WatchedCatVideos: boolean;
+
+
+        constructor(WatchedCatVideos: boolean){
+            super();
+            this.Motivation = 0;
+            this.WatchedCatVideos = false;
+        }
+
+        watchCatVideos() {
+            this.Motivation++;
+        }     
+
+    }
+
+    const akiyama_private: CatLover = new CatLover(true);
+    console.info ("私のライフは" + akiyama_private.Motivation + "です。");
+
+    if (akiyama_private.WatchedCatVideos) {
+         akiyama_private.watchCatVideos();
+    }
+    console.info ("私のライフは" + akiyama_private.Motivation + "です。");
 
 }
