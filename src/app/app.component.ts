@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import Phaser from 'phaser';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
